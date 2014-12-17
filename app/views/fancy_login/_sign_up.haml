@@ -25,10 +25,12 @@
     #terms
       .help-inline
       .additional-note
-        = check_box_tag "loginbox-terms-and-conditions", 0, nil, :id => "loginbox-terms-and-conditions"
-        = label_tag "loginbox-terms-and-conditions" do
-          Confirmo que he leído y acepto la
-          %a{:href => "/politica-de-privacidad", :target => '_blank'} política de privacidad
+        %label{for: "loginbox-terms-and-conditions"}
+          = check_box_tag "loginbox-terms-and-conditions", 0, nil, :id => "loginbox-terms-and-conditions"
+          %span
+            Confirmo que he leído y acepto la
+          = link_to "política de privacidad", "#{kelisto_root_url}politica-de-privacidad"
+        
 
     %button.btn.button-green.btn-large.btn-block{type: 'submit'}
       Crear cuenta
