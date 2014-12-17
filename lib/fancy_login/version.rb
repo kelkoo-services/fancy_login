@@ -1,3 +1,3 @@
 module FancyLogin
-  VERSION = "1.0.37" # fixed checkbox bug
+  VERSION = "1.0.38" # fixed small bug
 end
