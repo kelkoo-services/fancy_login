@@ -8,8 +8,10 @@ $purple-text: #861f82;
 $lightgray: #f2f2f2;
 $red-error-text: #ea5958;
 $secondary: #eeaf00;//orange
-$blue:          #79c8f0;
+$blue:          #009de0;
 $modal-background: #f8f9fa;
+$dark_border :  #e5e5e1;
+$light_border:  #eeeeea;
 
 @mixin input-placeholder {
   &.placeholder { @content; }
