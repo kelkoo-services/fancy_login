@@ -65,6 +65,7 @@ $modal-background: #f8f9fa;
       font: normal 1.2em/1em 'Raleway', Helvetica, sans-serif;
       font-weight: 700;
       padding:0;
+      text-transform:uppercase;
       @include mobile-landscape-and-up {
         font-size: 1.5em/1em;
       }
@@ -261,44 +262,31 @@ $modal-background: #f8f9fa;
 
   #terms{
     margin-bottom: 1em;
-    font-size:.9em;
-    input[type="radio"], input[type="checkbox"] {
-      -webkit-appearance: none;
-      position: relative;
-      border-radius: 3em;
+    input, label{
       display: inline-block;
-      vertical-align: middle;
-      margin: -0.3em 0.25em 0 0;
-      padding: 0;
-      width: 1.3em;
-      height: 1.3em;
-      background: white;
-      border-radius: 50%;
-      font-size: 0.9em;
-      cursor: pointer;
-      box-shadow: inset 0 1px 1px #999999;
-      -webkit-transition: box-shadow 200ms, border-color 200ms, background 300ms;
-      -moz-transition: box-shadow 200ms, border-color 200ms, background 300ms;
-      transition: box-shadow 200ms, border-color 200ms, background 300ms;
+      margin:0;
+      font-size: .9em;
+    }
+    input[type="text"]{
+      font-size: 1.2em;
+      line-height: 2em;
+      margin: .5em;
+      border: solid 3px $light_border;
+      @include border-radius(.3em;);
+      @include box-shadow(none);
+      outline: none;
+      @include transition( all 0.05s ease-in-out);
 
       &:focus {
+        border:solid 3px $blue;
         outline: none;
+        background-color: rgba(255,253,62,0.4);
       }
       &:hover{
-        border:solid 2px $blue;
-      }
-      &:checked{
-        background: $blue;
-        box-shadow: inset 0 1px 3px #666666, inset 0 0 0 0.4em white;
-      }
-      &:checked:hover{
-        box-shadow: inset 0 1px 0px $blue, inset 0 0 0 0.3em white, 0 0 1px 3px $blue;
-        border:solid 1px $blue;
-      }
-      &:checked:active{
-        background: $blue;
-        border:solid 1px $blue;
-        box-shadow:none;
+        border:solid 3px $blue;
+        background-color: rgba(255,253,62,0.4);
+        outline: none;
+        cursor:pointer;
       }
     }
   }
