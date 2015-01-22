@@ -254,7 +254,6 @@ class @LoginBox
           mixingpanel_tracker.track "Login", {"action":"signin unsuccessful", "location":"login fancybox", "url": document.URL }
 
         return false
-
       # send the request
       form.find('.other').removeClass('error')
       $.fancybox.update()
@@ -264,10 +263,9 @@ class @LoginBox
         url: url,
         dataType: "JSONP",
         timeout: 20000,
-        data: {user: {email: email, password: password, "remember_me": true}},
-
+        data: {user: {email: email, password: password, "remember_me": true}, terms_and_conditions: 1},
         # deals with unknown errors
-        error: () =>
+        error: (json, textStatus, xOptions) =>
           @constructor.unblock()
           # re-enable the send button after some unhandled error happened
           form.find('.other').addClass('error')

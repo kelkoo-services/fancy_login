@@ -1,3 +1,3 @@
 module FancyLogin
-  VERSION = "1.0.39" # update base colors
+  VERSION = "1.0.40" # added terms_and_conditions to register
 end
