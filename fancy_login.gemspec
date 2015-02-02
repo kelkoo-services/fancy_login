@@ -22,6 +22,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "sass-rails"
   s.add_runtime_dependency "compass", "0.12.6"
   s.add_runtime_dependency "compass-rails", "2.0.0"
-  s.add_runtime_dependency "compass-normalize"
   s.add_runtime_dependency "susy", "1.0.9"
 end
