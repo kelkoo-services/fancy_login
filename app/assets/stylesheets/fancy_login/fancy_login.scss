@@ -181,12 +181,12 @@ $light_border:  #eeeeea;
       padding: 1em;
     }
   }
-  .forgot-password-wrapper{
+  .forgot-password-wrapper, .verification-wrapper{
     position:relative;
     top: -.8em;
     text-align: right;
   }
-  .forgot-pass {
+  .forgot-pass, .send-verification-email{
     margin: 1em auto;
     font-size: .9em;
   }

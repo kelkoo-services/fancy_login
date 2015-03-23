@@ -20,7 +20,9 @@
       .forgot-password-wrapper
         %a.forgot-pass{href: '#', rel: 'nofollow'}
           Recupera tu contraseña
-
+      .verification-wrapper
+        %a.send-verification-email{href: "#{@config.url}/usuarios/confirmation/new", rel: 'nofollow'}
+          Reenviar email de verificación
     .other
       .help-inline
 
