@@ -27,18 +27,19 @@ class @LoginBox
       if $(e.currentTarget).data("event")?
         mixingpanel_tracker.track $(e.currentTarget).data('event'),
                                   $(e.currentTarget).data('extraProps')
-
+    
 
     #since .not-logged-in can be applied to a link or a button
     $(document).on "click", ".not-logged-in", (e) =>
       # Track mixpanel events for login links
       eventName = $(e.currentTarget).data("event")
-      if eventName? and @ignoreFancyboxLogin
-        mixingpanel_tracker.track $(e.currentTarget).data('event'),
-                                  $(e.currentTarget).data('extraProps'), @mobileRedirect(eventName)
       if eventName?
-        mixingpanel_tracker.track $(e.currentTarget).data('event'),
-                                  $(e.currentTarget).data('extraProps')
+        if @ignoreFancyboxLogin
+          mixingpanel_tracker.track $(e.currentTarget).data('event'),
+                                    $(e.currentTarget).data('extraProps'), @mobileRedirect(eventName)
+        else
+          mixingpanel_tracker.track $(e.currentTarget).data('event'),
+                                    $(e.currentTarget).data('extraProps')
 
       if @blocked
         return
