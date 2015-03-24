@@ -33,11 +33,12 @@ class @LoginBox
     $(document).on "click", ".not-logged-in", (e) =>
       # Track mixpanel events for login links
       eventName = $(e.currentTarget).data("event")
+      if eventName? and @ignoreFancyboxLogin
+        mixingpanel_tracker.track $(e.currentTarget).data('event'),
+                                  $(e.currentTarget).data('extraProps'), @mobileRedirect(eventName)
       if eventName?
         mixingpanel_tracker.track $(e.currentTarget).data('event'),
                                   $(e.currentTarget).data('extraProps')
-      if @ignoreFancyboxLogin
-        @mobileRedirect(eventName)
 
       if @blocked
         return
