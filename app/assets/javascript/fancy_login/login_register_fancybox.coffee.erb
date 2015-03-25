@@ -14,7 +14,8 @@ class @LoginBox
     # If the device width is smaller than X don't use fancybox login, but go to login screen...
     # We are considering height and width and taking the the max between the two to have the orientation change covered.
     # All known mobile / tablets are under 768px  in any orientation
-    if max_orientation < 768
+
+    if max_orientation <= 1024
       @ignoreFancyboxLogin = true
 
     unless @ignoreFancyboxLogin
