@@ -1,3 +1,3 @@
 module FancyLogin
-  VERSION = "1.0.44" # added version for facebook SDK
+  VERSION = "1.0.45" # increase max_orientation to affect tablets
 end
