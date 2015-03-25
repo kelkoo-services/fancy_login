@@ -4,6 +4,7 @@ window.fbAsyncInit = ->
     status: true
     cookie: true
     xfbml: true
+    version: 'v2.1'
 
 
 ((d, s, id) ->
@@ -13,6 +14,6 @@ window.fbAsyncInit = ->
   js = d.createElement(s)
   js.id = id
   js.async = true
-  js.src = "//connect.facebook.net/es_ES/all.js"
+  js.src = "//connect.facebook.net/en_US/sdk.js"
   fjs.parentNode.insertBefore js, fjs
 ) document, "script", "facebook-jssdk"

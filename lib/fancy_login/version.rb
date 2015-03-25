@@ -1,3 +1,3 @@
 module FancyLogin
-  VERSION = "1.0.43" # added mobile version callback for mixpanel
+  VERSION = "1.0.44" # added version for facebook SDK
 end
