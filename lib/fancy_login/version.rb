@@ -1,3 +1,3 @@
 module FancyLogin
-  VERSION = "1.0.45" # increase max_orientation to affect tablets
+  VERSION = "1.0.46" # Added switch form events
 end

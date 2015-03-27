@@ -167,10 +167,12 @@ class @LoginBox
       @clearFancyBoxError()
       target = $(e.target).attr("href")
       if target is "#signup"
+        mixingpanel_tracker.track 'Login',  {action: 'switched to register', location: 'login page' , url: document.URL }
         $("#loginbox-sign-in").fadeOut =>
           $('#loginbox-header h5').text("Regístrate en #{$('#loginbox-header h5').data('appName')}")
           $("#loginbox-sign-up").fadeIn()
       else if target is "#signin"
+        mixingpanel_tracker.track 'Register',  {action: 'switched to signin', location: 'login page' , url: document.URL }
         $("#loginbox-sign-up").fadeOut ->
           $('#loginbox-header h5').text("Inicia sesión en #{$('#loginbox-header h5').data('appName')}")
           $("#loginbox-sign-in").fadeIn()
