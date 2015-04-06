@@ -16,7 +16,7 @@ class @Notification
       else if window.location.hash.indexOf("n=reset-pass") != -1
         text = "Email enviado, consulta la bandeja de entrada de tu correo"
       else if window.location.hash.indexOf("n=confirm-email") != -1
-        text = "¡Gracias por unirte a Kelisto! Activa la cuenta desde tu correo y comienza a participar en nuestra gran comunidad de ahorradores."
+        text = "¡Gracias por unirte a Kelisto! Activa la cuenta desde tu correo y comienza a participar en nuestra gran comunidad de ahorradores. No te olvides de revisar la carpeta de spam, ¡por si las moscas!"
       else if window.location.hash.indexOf("n=participation-confirmed") != -1
         text = '¡Muchas gracias por participar y mucha suerte!'
       else if window.location.hash.indexOf("n=participation-unconfirmed") != -1
