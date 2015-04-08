@@ -262,12 +262,16 @@ class @LoginBox
       form.find('.other').removeClass('error')
       $.fancybox.update()
       form.find("button").attr('disabled', 'disabled')
+
+      if (form_id == 'register_form')
+        provider_signup = $('body').data('provider-signup')
+
       @constructor.block()
       $.ajax({
         url: url,
         dataType: "JSONP",
         timeout: 20000,
-        data: {user: {email: email, password: password, "remember_me": true}, terms_and_conditions: 1},
+        data: {user: {email: email, password: password, remember_me: true, provider_signup: provider_signup }, terms_and_conditions: 1},
         # deals with unknown errors
         error: (json, textStatus, xOptions) =>
           @constructor.unblock()
