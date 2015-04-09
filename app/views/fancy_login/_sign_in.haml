@@ -21,7 +21,7 @@
       %label{for: 'loginbox-remember-me'}
         = check_box_tag 'loginbox-remember-me', 0, nil, id: 'loginbox-remember-me'
         %span
-          Recordarme
+          No cerrar sesión
 
     - if @config.user["has_reset_password"]
       .forgot-password-wrapper
