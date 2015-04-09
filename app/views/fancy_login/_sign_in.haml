@@ -16,6 +16,13 @@
       .help-inline
       %input#loginbox-pass.form-control{name: 'user[password]', placeholder: 'Contraseña', maxlength: '30', type: 'password'}
 
+    .help-inline
+    .additional-note
+      %label{for: 'loginbox-remember-me'}
+        = check_box_tag 'loginbox-remember-me', 0, nil, id: 'loginbox-remember-me'
+        %span
+          Recordarme
+
     - if @config.user["has_reset_password"]
       .forgot-password-wrapper
         %a.forgot-pass{href: '#', rel: 'nofollow'}
