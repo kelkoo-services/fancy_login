@@ -97,7 +97,6 @@ class @LoginBox
 
 
     $('#login_form').submit (e) =>
-      mixingpanel_tracker.track "Login", {"action":"signin#{@checkRememberMe()}", "location":"login fancybox", "url": document.URL }
       @formSubmit e, $('#login_form').data('url')
 
     $('#loginbox-sign-in .btn-facebook').click (e) =>
@@ -258,11 +257,6 @@ class @LoginBox
       if has_errors
         $.fancybox.update()
 
-        if (form_id == "register_form")
-          mixingpanel_tracker.track "Register", {"action":"register unsuccessful", "location":"login fancybox", "url": document.URL }
-        else
-          mixingpanel_tracker.track "Login", {"action":"signin unsuccessful#{@checkRememberMe()}", "location":"login fancybox", "url": document.URL }
-
         return false
       # send the request
       form.find('.other').removeClass('error')
@@ -295,12 +289,6 @@ class @LoginBox
           # if there was some error, show it to the user and finish
           if json.status != 200
 
-            # Track unsuccesful login / register
-            if $(form).attr("id") == "login_form"
-              mixingpanel_tracker.track "Login", {"action":"signin unsuccessful#{@checkRememberMe()}", "location":"login fancybox", "url": document.URL }
-            else if $(form).attr("id") == "register_form"
-              mixingpanel_tracker.track "Login", {"action":"register unsuccessful", "location":"login fancybox", "url": document.URL }
-
             @constructor.unblock()
             form.find("button").removeAttr('disabled')
             if json.user?.errors?.email
@@ -318,11 +306,9 @@ class @LoginBox
           if json.need_confirm
             if $(form).attr("id") == "login_form"
               # Trying to login with unconfirmed acount
-              mixingpanel_tracker.track "Login", {"action":"register needs confirmation", "location":"login fancybox", "url": document.URL }
               @clear
               @showFancyBoxMessage(json.message, false)
             else
-              mixingpanel_tracker.track "Register", {"action":"register needs confirmation", "location":"login fancybox", "url": document.URL }
               $.fancybox.close()
               notification = new Notification
 
@@ -340,11 +326,6 @@ class @LoginBox
             @constructor.unblock()
 
           else
-            # Track succesful login / register
-            if $(form).attr("id") == "login_form"
-              mixingpanel_tracker.track "Login", {"action":"signin success#{@checkRememberMe()}", "location":"login fancybox", "url": document.URL }
-            else if $(form).attr("id") == "register_form"
-              mixingpanel_tracker.track "Register", {"action":"register success", "location":"login fancybox", "url": document.URL }
             window.processLogin()
 
       })

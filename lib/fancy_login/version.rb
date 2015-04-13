@@ -1,3 +1,3 @@
 module FancyLogin
-  VERSION = "1.0.50" # Add remember me option at login
+  VERSION = "1.0.51" # Remove mixpanel login/register tracking
 end
