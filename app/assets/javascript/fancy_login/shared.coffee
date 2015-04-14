@@ -21,6 +21,8 @@ class @Notification
         text = '¡Muchas gracias por participar y mucha suerte!'
       else if window.location.hash.indexOf("n=participation-unconfirmed") != -1
         text = 'Muchas gracias por participar.  Tu historia será publicada cuando confirmes tu dirección de email.'
+      else if window.location.hash.indexOf("n=reported-message") != -1
+        text = '¡Gracias por ayudarnos a mejorar la comunidad de Kelisto!'
       return text
 
     return false
