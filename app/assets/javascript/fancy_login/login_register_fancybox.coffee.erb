@@ -68,7 +68,7 @@ class @LoginBox
       FB.login (response) ->
           if response.authResponse
             $.ajax
-              url: $(e.currentTarget).attr('href')
+              url: $(e.currentTarget).data('url')
               dataType: "JSONP"
               timeout: 20000
               data: {}
